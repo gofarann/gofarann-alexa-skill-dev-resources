@@ -15,9 +15,9 @@ I looked over quite a few tutorials and found these three to be the most helpful
 
 
 ## Tips 
-* Beginner
+### Beginner
   * Make sure your Echo is on your Amazon account. "Alexa, which account am I on?"
-  * run 'npm install' each time you want to add a new package; you then have to re-zip the files with your src file and reupload to Lambda. 
+  * Run 'npm install' each time you want to add a new package; you then have to re-zip the files with your src file and reupload to Lambda. 
   * In order for your code to work, you must zip up your node modules as well as your src file in one folder and then upload to Lambda. 
   * Organize your code! 
     * You can either have different files and "require" them to create the relationships, or put them all in one index.js. 
@@ -27,7 +27,7 @@ I looked over quite a few tutorials and found these three to be the most helpful
       * Utterances (Interaction Model) - What must the user say in order to get the skill to execute correctly?
       * Intent Handler - Where function do I want to call when my user signals an 'Intent'?
  
-* Intermediate
+### Intermediate
   * Some errors won't show up in error logs -- check your card response on the app, but note that only actual voice testing will result in a card error return. 
   * API responses are limited to 24576 bytes. To handle this error, install the [object-sizeof](https://www.npmjs.com/package/object-sizeof) package. 
   * If you have secret keys that need to be kept secret, install the [dotenv](https://www.npmjs.com/package/dotenv) npm package. You will need to manually submit them to Lambda on the same page you upload your zip file. 
