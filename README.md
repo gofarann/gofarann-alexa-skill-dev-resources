@@ -28,5 +28,6 @@ I looked over quite a few tutorials and found these three to be the most helpful
       * Intent Handler - Where function do I want to call when my user signals an 'Intent'?
  
 * Intermediate
-  * 
-* Advanced
+  * Some errors won't show up in error logs -- check your card response on the app, but note that only actual voice testing will result in a card error return. 
+  * API responses are limited to 24576 bytes. To handle this error, install the [object-sizeof](https://www.npmjs.com/package/object-sizeof) package. 
+  * If you have secret keys that need to be kept secret, install the [dotenv](https://www.npmjs.com/package/dotenv) npm package. You will need to manually submit them to Lambda on the same page you upload your zip file. 
