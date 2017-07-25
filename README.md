@@ -9,9 +9,24 @@ I looked over quite a few tutorials and found these three to be the most helpful
 
 ## Trouble-Shooting
 * [CloudWatch Error Logs](https://console.aws.amazon.com/cloudwatch/home) - make sure it's in the same region as where Lambda code is hosted, which is probably US East (N. Virginia)
-* [Stack Overflow Alexa Skills Kit Tag] (https://stackoverflow.com/questions/tagged/alexa-skills-kit) - good for beginner problems. 
+* [Alexa Card Responses](http://alexa.amazon.com/spa/index.html) 
+* [Stack Overflow Alexa Skills Kit Tag](https://stackoverflow.com/questions/tagged/alexa-skills-kit) - good for beginner problems. 
 * [Amazon Developer Forums](https://forums.developer.amazon.com/spaces/23/Alexa+Skills+Kit.html) - good for advanced problems and finding out if there are systematic issues happening across the Alexa platform. 
 
 
-## Tips & Things I wish I Would've Known
-* Make sure 
+## Tips 
+* Beginner
+  * Make sure your Echo is on your Amazon account. "Alexa, which account am I on?"
+  * run 'npm install' each time you want to add a new package; you then have to re-zip the files with your src file and reupload to Lambda. 
+  * In order for your code to work, you must zip up your node modules as well as your src file in one folder and then upload to Lambda. 
+  * Organize your code! 
+    * You can either have different files and "require" them to create the relationships, or put them all in one index.js. 
+    * There are four sections you must have, think through them like so:
+      * States - What different states must my skill go through in order for Alexa to know how to make decisions about how to respond? 
+      * Intents - What does the User want to do at each state?
+      * Utterances (Interaction Model) - What must the user say in order to get the skill to execute correctly?
+      * Intent Handler - Where function do I want to call when my user signals an 'Intent'?
+ 
+* Intermediate
+  * 
+* Advanced
