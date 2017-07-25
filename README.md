@@ -14,7 +14,7 @@ I looked over quite a few tutorials and found these three to be the most helpful
 * [Amazon Developer Forums](https://forums.developer.amazon.com/spaces/23/Alexa+Skills+Kit.html) - good for advanced problems and finding out if there are systematic issues happening across the Alexa platform. 
 
 
-## Tips 
+## Tips & Common Mistakes
 ### Beginner
   * Make sure your Echo is on your Amazon account. "Alexa, which account am I on?"
   * Run 'npm install' each time you want to add a new package; you then have to re-zip the files with your src file and reupload to Lambda. 
@@ -25,9 +25,12 @@ I looked over quite a few tutorials and found these three to be the most helpful
       * States - What different states must my skill go through in order for Alexa to know how to make decisions about how to respond? 
       * Intents - What does the User want to do at each state?
       * Utterances (Interaction Model) - What must the user say in order to get the skill to execute correctly?
-      * Intent Handler - Where function do I want to call when my user signals an 'Intent'?
+      * Intent Handler - Where function do I want to call when my user signals an 'Intent'? 
+  * Make sure the intent under each state 'calls' the intent handler function. You may need to pass the 'this' object as argument. 
  
 ### Intermediate
   * Some errors won't show up in error logs -- check your card response on the app, but note that only actual voice testing will result in a card error return. 
   * API responses are limited to 24576 bytes. To handle this error, install the [object-sizeof](https://www.npmjs.com/package/object-sizeof) package. 
   * If you have secret keys that need to be kept secret, install the [dotenv](https://www.npmjs.com/package/dotenv) npm package. You will need to manually submit them to Lambda on the same page you upload your zip file. 
+  * If you are using an API, JSON response must be manipulated within the function of the call using the '.then' syntax. This is due to Javascript's asynchronous nature. Additionally, the JSON response object has become the 'this' of the function, so the object that the function is being called from, aka, the Alexa JSON request object has to be reidentified as 'that'. 
+  
